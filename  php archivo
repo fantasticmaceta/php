@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+
+class Usuario { 
+  private $usuario; 
+  private $password;
+  public function saludar() {
+        echo '¡Hola' . $this->usuario . '!¿Qué tal?';
+    }
+    private function __construct() {
+        $this->password = random_init(7171 , 6161);  
+    } 
+    public function __destruct() {
+        echo $this->usuario . 'Siuuuuu <br>';
+    }
+   public static function login ($nombre, $password){
+  	if ($this->usuario ==$nombre && $this->password ==$password)
+   	echo  'La contraseña es correcta';
+    
+  	 else{ 
+   	echo 'La contraseña es incorrecta, vuelve a intentarlo';
+   }
+   
+   }
+   }
+   
+   class Administrador extends Usuario {  
+	public function saludar() {
+        echo 'Hola admin>> ' . $this->usuario;
+    } 
+    public function banear($usuario) {
+        echo $usuario->usuario . " ha sido baneado";
+    }
+   }
+
+$usuario = new Usuario;
+$usuario->usuario = 'Garsi';
+$admin = new Administrador;
+$admin->usuario = 'erkaki';
+$admin->saludar();  
+$admin->banear($usuario);
+
+?>
+</body>
+</html>
+
+
+
+</body>
+</html>
